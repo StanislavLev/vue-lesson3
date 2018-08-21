@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+  height:100%;
+}
+
+body {
+  margin: auto;
+  font-size: 1.2em;
+  background: #EEE; 
+}
+
+header {
+  text-align: center;
+  background: orange;
+}
+
+header > * {
+  color: #444;
+  margin-bottom: 0;
+}
+
+#app-root {
+  height:100%;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+.puppy-name-grid {
+  display: grid;
+  grid-row-gap: 20px;
+  justify-content: space-evenly;
+  padding: 20px 0;
+}
+
+@media only screen and (min-width: 700px) {
+  body {width : 700px;}
+  .puppy-name-grid { grid-template-columns: auto auto;}
+}
+
+@media only screen and (min-width: 1000px) {
+  body {width : 1000px;}
+  .puppy-name-grid { grid-template-columns: auto auto auto;}
+}
+
+@media only screen and (min-width: 1400px) {
+  body {width : 1400px;}
+  .puppy-name-grid { grid-template-columns: auto auto auto auto;}
+}
+
+
