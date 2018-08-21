@@ -1,7 +1,7 @@
 <template>
   <a class="puppy-section" :href="storyLink"> 
     <h3>Hi I'm {{name}} and this is my story...</h3>
-    <p><img :src="imgURL" alt="puppy image" />{{summary}} </p>
+    <p><img :src="imgLink" alt="puppy image" />{{summary}} </p>
   </a>
 </template>
 
@@ -20,14 +20,9 @@ export default {
       type: String,
       required: true
     },
-    index: {
-      type: Number,
+    imgLink: {
+      type: String,
       required: true
-    }
-  },
-  computed: {
-    imgURL() {
-      return 'http://www.placepuppy.net/'+this.index+'p/150/125';
     }
   }
 }
