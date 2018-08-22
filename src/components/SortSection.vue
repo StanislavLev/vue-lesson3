@@ -6,6 +6,7 @@
         <span v-show="sortedByName">
           <span v-show="!reversed"> &#x25b2; </span>
           <span v-show="reversed">  &#x25bc; </span>
+          <span class="cancelBtn" @click.stop="cancelSortByName"><big>	&#x2718; </big></span>
         </span>
       </h4>
     </button>
@@ -31,11 +32,27 @@ export default {
   },
   methods: {
     sortByName(){
-      console.log(this.sortedByName);
-      console.log(this.reversed);
-      this.sortedByName?(this.reversed=!this.reversed):(this.sortedByName=true);
+      this.sortedByName?(this.reversed = !this.reversed):(this.sortedByName = true);
       this.$emit('sortByName', this.reversed);
+    },
+    cancelSortByName(){
+      this.sortedByName = false;
+      this.$emit('cancelSortByName');
     }
   }
 }
 </script>
+
+<style scoped>
+
+button {
+  position: relative;
+}
+
+.cancelBtn{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+</style>

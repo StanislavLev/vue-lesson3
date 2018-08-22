@@ -1,7 +1,7 @@
 <template>
   <div id="app-root">
     <header><h1>{{title}}</h1></header>
-    <sortsection v-on:sortByName="sortPuppiesByName($event)"></sortsection>
+    <sortsection v-on:sortByName="sortPuppiesByName($event)" v-on:cancelSortByName="defaultPuppiesOrder"></sortsection>
     <div id="puppy-card-grid">
       <puppy v-for="(puppy, index) in puppies" :name="puppy.name" :summary="puppy.summary" :imgLink="puppy.imgLink" :storyLink="puppy.storyLink" :key="index"></puppy>
     </div>
@@ -98,13 +98,15 @@ export default {
   },
   methods: {
     sortPuppiesByName(reversed){
-      console.log(reversed);
       if(!reversed) {
         return this.puppies.sort(function(a, b){return (a.name > b.name)?1:((a.name < b.name)?-1:0);});
       }
       else {
         return this.puppies.sort(function(a, b){return (a.name < b.name)?1:((a.name > b.name)?-1:0);});
       }
+    },
+    defaultPuppiesOrder(){
+      this.puppies.sort(function(a, b){return (a.id - b.id)});
     }
   }
 }
