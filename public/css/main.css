@@ -20,6 +20,7 @@ header {
 header > * {
   color: #444;
   margin-bottom: 0;
+  padding: 10px 0;
 }
 
 #app-root {
@@ -27,26 +28,30 @@ header > * {
   box-shadow: 0 0 20px rgba(0,0,0,0.2);
 }
 
-.puppy-name-grid {
+#puppy-card-grid {
   display: grid;
   grid-row-gap: 20px;
   justify-content: space-evenly;
   padding: 20px 0;
 }
 
+#sortSection > button{
+  width: 25%;
+}
+
 @media only screen and (min-width: 700px) {
   body {width : 700px;}
-  .puppy-name-grid { grid-template-columns: auto auto;}
+  #puppy-card-grid { grid-template-columns: auto auto;}
 }
 
 @media only screen and (min-width: 1000px) {
   body {width : 1000px;}
-  .puppy-name-grid { grid-template-columns: auto auto auto;}
+  #puppy-card-grid { grid-template-columns: auto auto auto;}
 }
 
 @media only screen and (min-width: 1400px) {
   body {width : 1400px;}
-  .puppy-name-grid { grid-template-columns: auto auto auto auto;}
+  #puppy-card-grid { grid-template-columns: auto auto auto auto;}
 }
 
 
