@@ -1,5 +1,5 @@
 <template>
-  <div id="sortSection">
+  <div>
     <button @click="sortByName">
       <h4>
         Sort Stories by <br/> Teller's Name
@@ -37,6 +37,7 @@ export default {
     },
     cancelSortByName(){
       this.sortedByName = false;
+      this.reversed = false;
       this.$emit('cancelSortByName');
     }
   }
@@ -47,6 +48,7 @@ export default {
 
 button {
   position: relative;
+  width: 25%;
 }
 
 .cancelBtn{

@@ -35,10 +35,6 @@ header > * {
   padding: 20px 0;
 }
 
-#sortSection > button{
-  width: 25%;
-}
-
 @media only screen and (min-width: 700px) {
   body {width : 700px;}
   #puppy-card-grid { grid-template-columns: auto auto;}
