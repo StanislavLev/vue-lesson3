@@ -1,12 +1,12 @@
 <template>
   <div>
-    <button @click="sortByName">
+    <button id="sortByNameBtn" @click="sortByName">
       <h4>
         Sort Stories by <br/> Teller's Name
-        <span v-show="sortedByName">
-          <span v-show="!reversed"> &#x25b2; </span>
-          <span v-show="reversed">  &#x25bc; </span>
+        <span class="arrowAndX" v-show="sortedByName">
           <span class="cancelBtn" @click.stop="cancelSortByName"><big>	&#x2718; </big></span>
+          <span class="arrowUp" v-show="namesAtoZ"> &#x25b2;</span>
+          <span class="arrowDn" v-show="!namesAtoZ">  &#x25bc;</span>
         </span>
       </h4>
     </button>
@@ -27,17 +27,17 @@ export default {
   data() {
     return {
       sortedByName: false,
-      reversed: false 
+      namesAtoZ: true 
     };
   },
   methods: {
     sortByName(){
-      this.sortedByName?(this.reversed = !this.reversed):(this.sortedByName = true);
-      this.$emit('sortByName', this.reversed);
+      this.sortedByName?(this.namesAtoZ = !this.namesAtoZ):(this.sortedByName = true);
+      this.$emit('sortByName', this.namesAtoZ);
     },
     cancelSortByName(){
       this.sortedByName = false;
-      this.reversed = false;
+      this.namesAtoZ = true;
       this.$emit('cancelSortByName');
     }
   }

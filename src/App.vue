@@ -97,8 +97,8 @@ export default {
     };
   },
   methods: {
-    sortPuppiesByName(reversed){
-      if(!reversed) {
+    sortPuppiesByName(namesAtoZ){
+      if(namesAtoZ) {
         return this.puppies.sort(function(a, b){return (a.name > b.name)?1:((a.name < b.name)?-1:0);});
       }
       else {
